@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character y="350" sprite="sonicFirstPerson" scale="2" antialiasing="false" flipX="true" camx="380" camy="100" isPlayer="true" icon="bf" color="#30B0D1">
+	<anim name="idle" anim="idle" x="-138" y="8.5"/>
+	<anim name="singUP" anim="up" x="-138" y="8.5"/>
+	<anim name="singDOWN" anim="down" x="-138" y="8.5"/>
+	<anim name="singLEFT" anim="left" x="-138" y="8.5"/>
+	<anim name="singRIGHT" anim="right" x="-138" y="8.5"/>
+</character>

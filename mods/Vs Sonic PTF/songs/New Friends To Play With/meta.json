@@ -1,0 +1,14 @@
+{
+	"opponentModeAllowed": true,
+	"icon": "face",
+	"difficulties": [
+		"Hard"
+	],
+	"color": "#003FFF",
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"displayName": "New Friends to Play With",
+	"needsVoices": true,
+	"beatsPerMeasure": 4,
+	"bpm": 180
+}

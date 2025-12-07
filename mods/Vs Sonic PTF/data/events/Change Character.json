@@ -1,0 +1,40 @@
+{
+  "params": [
+    
+    {
+      "name": "Precache",
+      "type": "Bool",
+      "defaultValue": true
+    },
+    
+    {
+      "name": "StrumLine To Change",
+      "type": "StrumLine",
+      "defaultValue": 0
+    },
+    
+    {
+      "name": "Character Index",
+      "type": "Int(0, 99, 1)",
+      "defaultValue": 0
+    },
+
+    {
+      "name": "Character Name",
+      "type": "String",
+      "defaultValue": "bf"
+    },
+
+    {
+      "name": "X Offset",
+      "type": "Float(-999999, 999999, 1, 2)", 
+      "defaultValue": 0
+    },
+    {
+      "name": "Y Offset",
+      "type": "Float(-999999, 999999, 1, 2)", 
+      "defaultValue": 0
+    }
+  ]
+}
+  
