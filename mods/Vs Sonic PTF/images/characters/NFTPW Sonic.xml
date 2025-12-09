@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="NFTPW Sonic.png">
+	<!-- Created with Adobe Animate version 23.0.1.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="DownPose0000" x="10" y="10" width="512" height="340" frameX="0" frameY="-18" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="DownPose0001" x="532" y="10" width="512" height="332" frameX="0" frameY="-26" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="DownPose0002" x="1054" y="10" width="512" height="325" frameX="0" frameY="-33" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="DownPose0003" x="1576" y="10" width="512" height="332" frameX="0" frameY="-26" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="DownPose0004" x="2098" y="10" width="512" height="345" frameX="0" frameY="-13" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="DownPose0005" x="2620" y="10" width="512" height="355" frameX="0" frameY="-3" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="DownPose0006" x="3142" y="10" width="512" height="358"/>
+	<SubTexture name="IdleSonic0000" x="10" y="378" width="512" height="358"/>
+	<SubTexture name="IdleSonic0001" x="532" y="378" width="512" height="358"/>
+	<SubTexture name="IdleSonic0002" x="1054" y="378" width="512" height="356" frameX="0" frameY="-2" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="IdleSonic0003" x="1576" y="378" width="512" height="355" frameX="0" frameY="-3" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="IdleSonic0004" x="2098" y="378" width="512" height="358"/>
+	<SubTexture name="IdleSonic0005" x="2620" y="378" width="512" height="353" frameX="0" frameY="-5" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="IdleSonic0006" x="3142" y="378" width="512" height="358"/>
+	<SubTexture name="IdleSonic0007" x="10" y="746" width="512" height="358"/>
+	<SubTexture name="IdleSonic0008" x="532" y="746" width="512" height="352" frameX="0" frameY="-6" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="IdleSonic0009" x="1054" y="746" width="512" height="353" frameX="0" frameY="-5" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="IdleSonic0010" x="1576" y="746" width="512" height="355" frameX="0" frameY="-3" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="IdleSonic0011" x="2098" y="746" width="512" height="358"/>
+	<SubTexture name="LeftPose0000" x="2620" y="746" width="511" height="369" frameX="-1" frameY="0" frameWidth="512" frameHeight="369"/>
+	<SubTexture name="LeftPose0001" x="3141" y="746" width="511" height="369" frameX="-1" frameY="0" frameWidth="512" frameHeight="369"/>
+	<SubTexture name="LeftPose0002" x="10" y="1125" width="511" height="368" frameX="-1" frameY="-1" frameWidth="512" frameHeight="369"/>
+	<SubTexture name="LeftPose0003" x="531" y="1125" width="512" height="368" frameX="0" frameY="-1" frameWidth="512" frameHeight="369"/>
+	<SubTexture name="LeftPose0004" x="1053" y="1125" width="512" height="364" frameX="0" frameY="-5" frameWidth="512" frameHeight="369"/>
+	<SubTexture name="LeftPose0005" x="1575" y="1125" width="512" height="360" frameX="0" frameY="-9" frameWidth="512" frameHeight="369"/>
+	<SubTexture name="LeftPose0006" x="3142" y="10" width="512" height="358" frameX="0" frameY="-11" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="RightPose0000" x="2097" y="1125" width="512" height="374" frameX="0" frameY="-9" frameWidth="512" frameHeight="383"/>
+	<SubTexture name="RightPose0001" x="2619" y="1125" width="512" height="378" frameX="0" frameY="-5" frameWidth="512" frameHeight="383"/>
+	<SubTexture name="RightPose0002" x="3141" y="1125" width="512" height="383"/>
+	<SubTexture name="RightPose0003" x="10" y="1518" width="512" height="359" frameX="0" frameY="-24" frameWidth="512" frameHeight="383"/>
+	<SubTexture name="RightPose0004" x="532" y="1518" width="512" height="356" frameX="0" frameY="-27" frameWidth="512" frameHeight="383"/>
+	<SubTexture name="RightPose0005" x="1054" y="1518" width="512" height="358" frameX="0" frameY="-25" frameWidth="512" frameHeight="383"/>
+	<SubTexture name="RightPose0006" x="3142" y="10" width="512" height="358" frameX="0" frameY="-25" frameWidth="512" frameHeight="358"/>
+	<SubTexture name="SonicDownMiss0000" x="1576" y="1518" width="512" height="340" frameX="-55" frameY="-32" frameWidth="673" frameHeight="393"/>
+	<SubTexture name="SonicDownMiss0001" x="1576" y="1518" width="512" height="340" frameX="-55" frameY="-32" frameWidth="673" frameHeight="393"/>
+	<SubTexture name="SonicDownMiss0002" x="1576" y="1518" width="512" height="340" frameX="-55" frameY="-32" frameWidth="673" frameHeight="393"/>
+	<SubTexture name="SonicDownMiss0003" x="2098" y="1518" width="512" height="332" frameX="-55" frameY="-40" frameWidth="673" frameHeight="393"/>
+	<SubTexture name="SonicDownMiss0004" x="2620" y="1518" width="567" height="385" frameX="0" frameY="-8" frameWidth="673" frameHeight="393"/>
+	<SubTexture name="SonicDownMiss0005" x="2620" y="1518" width="567" height="385" frameX="0" frameY="-8" frameWidth="673" frameHeight="393"/>
+	<SubTexture name="SonicDownMiss0006" x="3197" y="1518" width="673" height="393"/>
+	<SubTexture name="SonicLeftMiss0000" x="10" y="1921" width="511" height="382" frameX="-1" frameY="0" frameWidth="512" frameHeight="382"/>
+	<SubTexture name="SonicLeftMiss0001" x="531" y="1921" width="511" height="370" frameX="-1" frameY="-12" frameWidth="512" frameHeight="382"/>
+	<SubTexture name="SonicLeftMiss0002" x="1052" y="1921" width="512" height="369" frameX="0" frameY="-13" frameWidth="512" frameHeight="382"/>
+	<SubTexture name="SonicLeftMiss0003" x="1574" y="1921" width="512" height="369" frameX="0" frameY="-13" frameWidth="512" frameHeight="382"/>
+	<SubTexture name="SonicLeftMiss0004" x="2096" y="1921" width="512" height="369" frameX="0" frameY="-13" frameWidth="512" frameHeight="382"/>
+	<SubTexture name="SonicLeftMiss0005" x="2618" y="1921" width="512" height="359" frameX="0" frameY="-23" frameWidth="512" frameHeight="382"/>
+	<SubTexture name="SonicLeftMiss0006" x="3140" y="1921" width="512" height="359" frameX="0" frameY="-23" frameWidth="512" frameHeight="382"/>
+	<SubTexture name="SonicRightMiss0000" x="10" y="2313" width="512" height="375" frameX="0" frameY="-40" frameWidth="512" frameHeight="415"/>
+	<SubTexture name="SonicRightMiss0001" x="532" y="2313" width="512" height="415"/>
+	<SubTexture name="SonicRightMiss0002" x="1054" y="2313" width="512" height="360" frameX="0" frameY="-55" frameWidth="512" frameHeight="415"/>
+	<SubTexture name="SonicRightMiss0003" x="1576" y="2313" width="512" height="360" frameX="0" frameY="-55" frameWidth="512" frameHeight="415"/>
+	<SubTexture name="SonicRightMiss0004" x="2098" y="2313" width="512" height="378" frameX="0" frameY="-37" frameWidth="512" frameHeight="415"/>
+	<SubTexture name="SonicRightMiss0005" x="2620" y="2313" width="309" height="371" frameX="-131" frameY="-38" frameWidth="512" frameHeight="415"/>
+	<SubTexture name="SonicRightMiss0006" x="2939" y="2313" width="312" height="377" frameX="-142" frameY="-36" frameWidth="512" frameHeight="415"/>
+	<SubTexture name="SonicUpMiss0000" x="3261" y="2313" width="512" height="384" frameX="0" frameY="-2" frameWidth="512" frameHeight="386"/>
+	<SubTexture name="SonicUpMiss0001" x="10" y="2738" width="512" height="384" frameX="0" frameY="-2" frameWidth="512" frameHeight="386"/>
+	<SubTexture name="SonicUpMiss0002" x="532" y="2738" width="512" height="384" frameX="0" frameY="-2" frameWidth="512" frameHeight="386"/>
+	<SubTexture name="SonicUpMiss0003" x="1054" y="2738" width="512" height="384" frameX="0" frameY="-2" frameWidth="512" frameHeight="386"/>
+	<SubTexture name="SonicUpMiss0004" x="1576" y="2738" width="512" height="386"/>
+	<SubTexture name="SonicUpMiss0005" x="2098" y="2738" width="512" height="359" frameX="0" frameY="-27" frameWidth="512" frameHeight="386"/>
+	<SubTexture name="SonicUpMiss0006" x="2620" y="2738" width="512" height="359" frameX="0" frameY="-27" frameWidth="512" frameHeight="386"/>
+	<SubTexture name="UpPose0000" x="3142" y="2738" width="512" height="383" frameX="0" frameY="-5" frameWidth="512" frameHeight="388"/>
+	<SubTexture name="UpPose0001" x="10" y="3134" width="512" height="386" frameX="0" frameY="-2" frameWidth="512" frameHeight="388"/>
+	<SubTexture name="UpPose0002" x="532" y="3134" width="512" height="388"/>
+	<SubTexture name="UpPose0003" x="1054" y="3134" width="512" height="383" frameX="0" frameY="-5" frameWidth="512" frameHeight="388"/>
+	<SubTexture name="UpPose0004" x="1576" y="3134" width="512" height="372" frameX="0" frameY="-16" frameWidth="512" frameHeight="388"/>
+	<SubTexture name="UpPose0005" x="2098" y="3134" width="512" height="363" frameX="0" frameY="-25" frameWidth="512" frameHeight="388"/>
+	<SubTexture name="UpPose0006" x="3142" y="10" width="512" height="358" frameX="0" frameY="-30" frameWidth="512" frameHeight="358"/>
+</TextureAtlas>

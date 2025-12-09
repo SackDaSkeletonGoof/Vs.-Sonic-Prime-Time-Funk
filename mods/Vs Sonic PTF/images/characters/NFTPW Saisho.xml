@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="NFTPW Saisho.png">
+	<!-- Created with Adobe Animate version 23.0.1.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="SaishoDOWN0000" x="507" y="226" width="120" height="197"/>
+	<SubTexture name="SaishoDOWN0001" x="637" y="226" width="120" height="197"/>
+	<SubTexture name="SaishoDOWN0002" x="767" y="226" width="120" height="197"/>
+	<SubTexture name="SaishoDOWN0003" x="897" y="226" width="120" height="197"/>
+	<SubTexture name="SaishoDOWN0004" x="1027" y="226" width="120" height="197"/>
+	<SubTexture name="SaishoDOWN0005" x="1157" y="226" width="120" height="197"/>
+	<SubTexture name="SaishoDOWN0006" x="1287" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoDOWNmiss0000" x="10" y="10" width="107" height="205"/>
+	<SubTexture name="SaishoDOWNmiss0001" x="10" y="10" width="107" height="205"/>
+	<SubTexture name="SaishoDOWNmiss0002" x="10" y="10" width="107" height="205"/>
+	<SubTexture name="SaishoDOWNmiss0003" x="127" y="10" width="107" height="205"/>
+	<SubTexture name="SaishoDOWNmiss0004" x="244" y="10" width="107" height="205"/>
+	<SubTexture name="SaishoDOWNmiss0005" x="361" y="10" width="107" height="205"/>
+	<SubTexture name="SaishoDOWNmiss0006" x="478" y="10" width="107" height="205"/>
+	<SubTexture name="SaishoIdle0000" x="1287" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0001" x="1400" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0002" x="1513" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0003" x="1626" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0004" x="1739" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0005" x="1852" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0006" x="10" y="433" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0007" x="123" y="433" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0008" x="236" y="433" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0009" x="349" y="433" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0010" x="462" y="433" width="103" height="187"/>
+	<SubTexture name="SaishoIdle0011" x="575" y="433" width="103" height="187"/>
+	<SubTexture name="SaishoLEFT0000" x="688" y="433" width="188" height="199"/>
+	<SubTexture name="SaishoLEFT0001" x="886" y="433" width="188" height="199"/>
+	<SubTexture name="SaishoLEFT0002" x="1084" y="433" width="188" height="199"/>
+	<SubTexture name="SaishoLEFT0003" x="1282" y="433" width="188" height="199"/>
+	<SubTexture name="SaishoLEFT0004" x="1480" y="433" width="188" height="199"/>
+	<SubTexture name="SaishoLEFT0005" x="1678" y="433" width="188" height="199"/>
+	<SubTexture name="SaishoLEFT0006" x="1287" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoLEFTmiss0000" x="595" y="10" width="152" height="199"/>
+	<SubTexture name="SaishoLEFTmiss0001" x="757" y="10" width="152" height="199"/>
+	<SubTexture name="SaishoLEFTmiss0002" x="919" y="10" width="152" height="199"/>
+	<SubTexture name="SaishoLEFTmiss0003" x="595" y="10" width="152" height="199"/>
+	<SubTexture name="SaishoLEFTmiss0004" x="757" y="10" width="152" height="199"/>
+	<SubTexture name="SaishoLEFTmiss0005" x="919" y="10" width="152" height="199"/>
+	<SubTexture name="SaishoLEFTmiss0006" x="1081" y="10" width="152" height="199"/>
+	<SubTexture name="SaishoRIGHT0000" x="1876" y="433" width="120" height="204"/>
+	<SubTexture name="SaishoRIGHT0001" x="10" y="647" width="120" height="204"/>
+	<SubTexture name="SaishoRIGHT0002" x="140" y="647" width="120" height="204"/>
+	<SubTexture name="SaishoRIGHT0003" x="270" y="647" width="120" height="204"/>
+	<SubTexture name="SaishoRIGHT0004" x="400" y="647" width="120" height="204"/>
+	<SubTexture name="SaishoRIGHT0005" x="530" y="647" width="120" height="204"/>
+	<SubTexture name="SaishoRIGHT0006" x="1287" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoRIGHTmiss0000" x="1243" y="10" width="161" height="206"/>
+	<SubTexture name="SaishoRIGHTmiss0001" x="1414" y="10" width="161" height="206"/>
+	<SubTexture name="SaishoRIGHTmiss0002" x="1585" y="10" width="161" height="206"/>
+	<SubTexture name="SaishoRIGHTmiss0003" x="1756" y="10" width="161" height="206"/>
+	<SubTexture name="SaishoRIGHTmiss0004" x="1414" y="10" width="161" height="206"/>
+	<SubTexture name="SaishoRIGHTmiss0005" x="1243" y="10" width="161" height="206"/>
+	<SubTexture name="SaishoRIGHTmiss0006" x="1756" y="10" width="161" height="206"/>
+	<SubTexture name="SaishoUP0000" x="660" y="647" width="104" height="190"/>
+	<SubTexture name="SaishoUP0001" x="774" y="647" width="104" height="190"/>
+	<SubTexture name="SaishoUP0002" x="888" y="647" width="104" height="190"/>
+	<SubTexture name="SaishoUP0003" x="1002" y="647" width="104" height="190"/>
+	<SubTexture name="SaishoUP0004" x="1116" y="647" width="104" height="190"/>
+	<SubTexture name="SaishoUP0005" x="1230" y="647" width="104" height="190"/>
+	<SubTexture name="SaishoUP0006" x="1287" y="226" width="103" height="187"/>
+	<SubTexture name="SaishoUPmiss0000" x="10" y="226" width="115" height="139" frameX="0" frameY="0" frameWidth="115" frameHeight="140"/>
+	<SubTexture name="SaishoUPmiss0001" x="135" y="226" width="114" height="140" frameX="0" frameY="0" frameWidth="115" frameHeight="140"/>
+	<SubTexture name="SaishoUPmiss0002" x="259" y="226" width="114" height="140" frameX="0" frameY="0" frameWidth="115" frameHeight="140"/>
+	<SubTexture name="SaishoUPmiss0003" x="383" y="226" width="114" height="140" frameX="0" frameY="0" frameWidth="115" frameHeight="140"/>
+	<SubTexture name="SaishoUPmiss0004" x="135" y="226" width="114" height="140" frameX="0" frameY="0" frameWidth="115" frameHeight="140"/>
+	<SubTexture name="SaishoUPmiss0005" x="259" y="226" width="114" height="140" frameX="0" frameY="0" frameWidth="115" frameHeight="140"/>
+	<SubTexture name="SaishoUPmiss0006" x="135" y="226" width="114" height="140" frameX="0" frameY="0" frameWidth="115" frameHeight="140"/>
+</TextureAtlas>

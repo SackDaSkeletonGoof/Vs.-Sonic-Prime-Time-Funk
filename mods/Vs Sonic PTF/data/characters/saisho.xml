@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="NFTPW Saisho" antialiasing="false" flipX="true" isPlayer="true" icon="saisho">
+	<anim name="idle" anim="SaishoIdle" fps="12"/>
+	<anim name="singDOWN" anim="SaishoDOWN" x="20" y="10" fps="12" indices="0..6"/>
+	<anim name="singRIGHT" anim="SaishoRIGHT" y="17" fps="12" indices="0..6"/>
+	<anim name="singLEFT" anim="SaishoLEFT" x="59" y="12" fps="12" indices="0..6"/>
+	<anim name="singUP" anim="SaishoUP" x="2" y="3" fps="12" indices="0..6"/>
+	<anim name="singUPmiss" anim="SaishoUPmiss" x="6" y="-48" fps="12" indices="0..6"/>
+	<anim name="singDOWNmiss" anim="SaishoDOWNmiss" x="9" y="18" fps="12" indices="0..6"/>
+	<anim name="singLEFTmiss" anim="SaishoLEFTmiss" x="9" y="12" fps="12" indices="0..6"/>
+	<anim name="singRIGHTmiss" anim="SaishoRIGHTmiss" x="31" y="19" fps="12" indices="0..6"/>
+</character>
