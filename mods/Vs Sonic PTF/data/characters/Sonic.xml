@@ -1,12 +1,12 @@
 <!DOCTYPE codename-engine-character>
-<character sprite="NFTPW Sonic" antialiasing="false" flipX="true" x="0" y="0" isPlayer="true" color="#005DFD">
+<character sprite="NFTPW Sonic" antialiasing="false" flipX="false" x="0" y="0" isPlayer="true" color="#005DFD">
 	<anim name="idle" anim="IdleSonic" x="106" y="69" fps="12"/>
 	<anim name="singDOWN" anim="DownPose" x="106" y="69" fps="12"/>
-	<anim name="singRIGHT" anim="RightPose" x="106" y="94" fps="12"/>
-	<anim name="singLEFT" anim="LeftPose" x="106" y="80" fps="12"/>
+	<anim name="singLEFT" anim="RightPose" x="106" y="94" fps="12"/>
+	<anim name="singRIGHT" anim="LeftPose" x="106" y="80" fps="12"/>
 	<anim name="singUP" anim="UpPose" x="106" y="99" fps="12"/>
 	<anim name="singUPmiss" anim="SonicUpMiss" x="106" y="97" fps="12"/>
 	<anim name="singDOWNmiss" anim="SonicDownMiss" x="161" y="83" fps="12"/>
-	<anim name="singLEFTmiss" anim="SonicLeftMiss" x="106" y="93" fps="12"/>
-	<anim name="singRIGHTmiss" anim="SonicRightMiss" x="106" y="125" fps="12"/>
+	<anim name="singRIGHTmiss" anim="SonicLeftMiss" x="106" y="93" fps="12"/>
+	<anim name="singLEFTmiss" anim="SonicRightMiss" x="106" y="125" fps="12"/>
 </character>

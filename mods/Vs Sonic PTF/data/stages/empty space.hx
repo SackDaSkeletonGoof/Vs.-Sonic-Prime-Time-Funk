@@ -6,14 +6,7 @@ FlxG.scaleMode.height = 480;
 var path = "stages/void/";
 var test:FlxSprite;
 
-function create(){
-    remove(dad);
-    remove(gf);
 
-    boyPlace(100,100);
-
-    //bf.screenCenter();
-}
 
 function boyPlace(placeX:Float, placeY:Float){
     bf.x = placeX;
@@ -30,7 +23,17 @@ function background(){
     add(test);
 }
 
+function create(){
+        
+    remove(dad);
+    remove(gf);
 
+    bf.x = gf.x;
+    bf.y = gf.y;
+
+    //bf.screenCenter();
+
+}
 
 function postCreate(){
     for (i in [missesTxt, accuracyTxt, scoreTxt, healthBar,healthBarBG, iconP2, iconP1]) i.visible = false;
