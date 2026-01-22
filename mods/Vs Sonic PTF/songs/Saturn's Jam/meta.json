@@ -1,0 +1,15 @@
+{
+	"customValues": {},
+	"color": "#003FFF",
+	"opponentModeAllowed": true,
+	"icon": "sonic",
+	"difficulties": [
+		"Hard"
+	],
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"displayName": "Saturn's Jam",
+	"needsVoices": false,
+	"beatsPerMeasure": 4,
+	"bpm": 130
+}

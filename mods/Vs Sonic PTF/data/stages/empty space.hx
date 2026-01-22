@@ -28,8 +28,7 @@ function create(){
     remove(dad);
     remove(gf);
 
-    bf.x = gf.x;
-    bf.y = gf.y;
+    //boyPlace(100,10);
 
     //bf.screenCenter();
 
