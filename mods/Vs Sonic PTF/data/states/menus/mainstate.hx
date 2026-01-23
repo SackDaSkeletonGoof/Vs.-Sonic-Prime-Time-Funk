@@ -3,6 +3,7 @@ import funkin.editors.EditorPicker;
 import funkin.menus.credits.CreditsMain;
 import funkin.options.OptionsMenu;
 import openfl.ui.Mouse;
+import flixel.effects.FlxFlicker;
 
 import lime.app.Application;
 import lime.graphics.Image;
@@ -31,15 +32,17 @@ function create(){
         menuItem = new FlxSprite(0,0).loadGraphic(Paths.image('game/' + option));
         menuItem.ID = i;
         menuOptions.add(menuItem);
-        menuItem.scale.set(1,1);
+        menuItem.scale.set(0.25,0.25);
         menuItem.alpha = 1;
         menuItem.antialiasing = false;
     }
 
-    menuOptions.members[0].setPosition(0,10);
-    menuOptions.members[1].setPosition(0,10);
-    menuOptions.members[2].setPosition(0,10);
-    menuOptions.members[3].setPosition(0,10);
+    var xPo = -650;
+
+    menuOptions.members[0].setPosition(xPo,-350);
+    menuOptions.members[1].setPosition(xPo,-300);
+    menuOptions.members[2].setPosition(xPo,-250);
+    menuOptions.members[3].setPosition(xPo,-200);
 
     trace(bingle.x + "this far in x");
     trace(bingle.y + "this far in y");
@@ -50,11 +53,35 @@ var somethingSelected:Bool = false;
 function update(){
     //idk what to do here.
 
-    if (controls.LEFT_P){
-        hoveringOption[0] = hoveringOption[0] - 1;
-        changeItem();
+    if (!somethingSelected) {
+		if (FlxG.keys.justPressed.ESCAPE) FlxG.switchState(new TitleState());
+		if (FlxG.keys.justPressed.EIGHT) FlxG.switchState(new MainMenuState());
+		if (FlxG.keys.justPressed.SEVEN) openSubState(new EditorPicker());
 
-    }
+		if (controls.DOWN_P){
+			hoveringOption[0] = hoveringOption[0] - 1;
+			changeItem();
+		}
+
+        if (controls.UP_P){
+			hoveringOption[0] = hoveringOption[0] + 1;
+			changeItem();
+		}
+
+		#if MOD_SUPPORT
+		if (controls.SWITCHMOD) {
+			openSubState(new ModSwitchMenu());
+			persistentUpdate = false;
+			persistentDraw = true;
+		}
+		#end
+
+		if (controls.ACCEPT){
+			selectItem();
+		}
+	}
+
+    trace(hoveringOption + "THIS IS SLECTED");
 }
 
 function changeItem() {
@@ -102,10 +129,10 @@ function selectItem() {
 	
 	new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
-			if (hoveringOption[0] == 0 && hoveringOption[1] == 0) FlxG.switchState(new ModState("menus/primeStory"));
+			if (hoveringOption[0] == 0 && hoveringOption[1] == 0) FlxG.switchState(new StoryMenuState());
 			if (hoveringOption[0] == 1 && hoveringOption[1] == 0) FlxG.switchState(new OptionsMenu());
-			if (hoveringOption[0] == 0 && hoveringOption[1] == 1) FlxG.switchState(new ModState("customStates/menus/rewritenFree"));
-			if (hoveringOption[0] == 1 && hoveringOption[1] == 1) FlxG.switchState(new ModState("menus/credits"));
+			if (hoveringOption[0] == 0 && hoveringOption[1] == 1) FlxG.switchState(new FreeplayState());
+			if (hoveringOption[0] == 1 && hoveringOption[1] == 1) FlxG.switchState(new CreditsMain());
 	});
 }
 
@@ -115,12 +142,9 @@ function postCreate(){
     FlxG.height = 960;
     FlxG.scaleMode.width = 640;
     FlxG.scaleMode.height = 480;
-    window.x = 450;
-    window.y = 150;
 }
 
 function destroy() {
-    window.x -= 160;
     FlxG.resizeWindow(1280, 720);
     FlxG.scaleMode.width = 1280;
     FlxG.scaleMode.height = 720;
