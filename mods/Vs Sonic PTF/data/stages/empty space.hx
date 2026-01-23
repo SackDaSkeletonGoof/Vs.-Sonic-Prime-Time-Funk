@@ -9,6 +9,40 @@ the floor gets added.
 thats the plan. idk how to actually code it in with out external events.
 reason why i mention this: its the only way to avoid that bug where if you press F5, everything gets fucked.
 */
+
+function create(){
+    remove(dad);
+    remove(gf);
+    remove(boyfriend);
+
+    test = new FlxSprite(0,0);
+    test.loadGraphic(Paths.image(path + "floor"));
+    test.scale.x = 1;
+    test.scale.y = 1;
+    test.scrollFactor.set(0, 0);
+    test.antialiasing = false;
+    add(test);
+    //boyPlace(100,10);
+
+    //bf.screenCenter();
+
+    boyfriend.scale.x = 0.6;
+    boyfriend.scale.y = 0.6;
+
+    add(boyfriend);
+}
+
+function beatHit(curBeat) {
+    switch (curBeat) {
+        case 209:
+            boyPlace(270,175);
+            test.x = -320;
+            test.y = -230;
+            boyfriend.scale.x = 1;
+            boyfriend.scale.y = 1;
+    }
+}
+
 function onCountdown(event:CountdownEvent) event.cancelled = true;
 
 
@@ -16,33 +50,21 @@ var path = "stages/void/";
 var test:FlxSprite;
 
 
-
 function boyPlace(placeX:Float, placeY:Float){
     bf.x = placeX;
     bf.y = placeY;
 }
-
-function background(){
-    test = new FlxSprite(-440,-300);
+/*
+function background(xPos:Float,yPos:Float){
+    test = new FlxSprite(xPos,yPos);
     test.loadGraphic(Paths.image(path + "floor"));
     test.scale.x = 1;
     test.scale.y = 1;
-    test.scrollFactor.set(0.4, 0.4);
+    test.scrollFactor.set(0, 0);
     test.antialiasing = false;
     add(test);
 }
-
-function create(){
-        
-    remove(dad);
-    remove(gf);
-
-    //boyPlace(100,10);
-
-    //bf.screenCenter();
-
-}
-
+*/
 function postCreate(){
     FlxG.resizeWindow(1024, 768);
     FlxG.width = 1280;

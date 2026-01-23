@@ -2,5 +2,5 @@
 <stage folder="empty space/" name="empty space" zoom="1">
 	<girlfriend x="0" scroll="0" spacingx="0" y="0"/>
 	<dad scroll="0"/>
-	<boyfriend x="120" scroll="0" spacingx="0" y="120" scale="0.6"/>
+	<boyfriend x="60" scroll="0" spacingx="0" y="120" scale="1"/>
 </stage>

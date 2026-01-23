@@ -4,7 +4,7 @@ import funkin.menus.credits.CreditsMain;
 import funkin.options.OptionsMenu;
 import openfl.ui.Mouse;
 import flixel.effects.FlxFlicker;
-
+import funkin.backend.utils.ShaderResizeFix;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.display.FlxBackdrop;
 
@@ -13,7 +13,12 @@ import lime.graphics.Image;
 import funkin.backend.system.framerate.Framerate;
 
 var bingle:FlxSprite;
+var sex:FlxSprite;
+/*
+yo, if youre reading this. please help me make this shit look low res. im gonna fucking tweak dawg
 
+please help me if you know how to. istg
+*/
 //var hoveringOption:Array<String> = [0,0];
 var menuOptions:FlxTypedGroup<FlxSprite>;
 var optionList:Array<Array> = ["story_mode_text","freeplay_text","options_text","credits_text"];
@@ -21,12 +26,25 @@ var optionList:Array<Array> = ["story_mode_text","freeplay_text","options_text",
 var curSelect:Int = 0;
 
 function create(){
+
     bingle = new FlxSprite().loadGraphic(Paths.image('startup/sega'));
     bingle.antialiasing = false;
     bingle.alpha = 1;
     bingle.x = 0;
     bingle.y = 0;
+    bingle.scale.x = 1;
+    bingle.scale.y = 1;
     add(bingle);
+
+    sex = new FlxSprite().loadGraphic(Paths.image('testing/unused files/sex'));
+    sex.antialiasing = false;
+    sex.alpha = 1;
+    sex.x = 300;
+    sex.y = 200;
+    sex.angle = 45;
+    sex.scale.x = 1;
+    sex.scale.y = 1;
+    add(sex);
 
     var xPo = -650;
 
@@ -118,7 +136,6 @@ function postCreate(){
     FlxG.height = 960;
     FlxG.scaleMode.width = 640;
     FlxG.scaleMode.height = 480;
-
     
     window.x = 450;
     window.y = 150;

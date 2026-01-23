@@ -1,84 +1,66 @@
-//a
-// import funkin.backend.scripting.MultiThreadedScript; // OpenGL hates threaded loading characters lmao
-import funkin.game.Character;
+// Script by Fushi
+var preloadedCharacters:Map<String, Character> = [];
 
-var charactersMap:Map<String, Character> = [
-    null => null, // because fuck hscript
-];
 function postCreate() {
-    if (gf != null) charactersMap.set(gf.curCharacter, gf);
-    if (dad != null) charactersMap.set(dad.curCharacter, dad);
-    if (boyfriend != null) charactersMap.set(boyfriend.curCharacter, boyfriend);
-    // 0 - Precache | 1 - StrumLine To Change | 2 - Character Index | 3 - Character Name | 4 - X Offset | 5 - Y Offset
-	for (event in events) {
-		if (event.name != 'Change Character' || event.params[0] == false) continue;
+    for (event in PlayState.SONG.events)
+        if (event.name == "Change Character" && !preloadedCharacters.exists(event.params[1])) {
+            // Look for character that alreadly exists
+            /*var foundPreExisting:Bool = false;  // sorry lunar but this can lead to several bugs and kinda breaks easily since youre not copying the character but literally stealing it  - Nex
+            for (strum in strumLines)
+                for (char in strum.characters)
+                    if (char.curCharacter == event.params[1]) {
+                        preloadedCharacters.set(event.params[1], char);
+                        graphicCache.cache(Paths.image("icons/" + char.getIcon()));
+                        foundPreExisting = true; break;
+                    }
+            if (foundPreExisting) continue;*/
 
-        var newCharName = event.params[3];
-        if (charactersMap.exists(newCharName)) continue;
+            // Create New Character
+            var strumLine = strumLines.members[event.params[0]];
+            var oldCharacter = strumLine.characters[0];
+            var newCharacter = new Character(oldCharacter.x, oldCharacter.y, event.params[1], stage.isCharFlipped(event.params[1], oldCharacter.isPlayer));
+            stage.applyCharStuff(newCharacter, strumLine.data.position == null ? (switch(strumLine.data.type) {
+                case 0: "dad";
+                case 1: "boyfriend";
+                case 2: "girlfriend";
+            }) : strumLine.data.position, 0);
+            newCharacter.active = newCharacter.visible = false;
+            newCharacter.drawComplex(FlxG.camera); // Push to GPU
+            preloadedCharacters.set(event.params[1], newCharacter);
+            graphicCache.cache(Paths.image("icons/" + newCharacter.getIcon()));
+        }
+}
 
-        var strumLineIdx = Std.parseInt(event.params[1]);
-        var charIndex = Std.parseInt(event.params[2]);
+function onEvent(_) {
+    var params:Array = _.event.params;
+    if (_.event.name == "Change Character") {
+        // Change Character
+        var oldCharacter = strumLines.members[params[0]].characters[0];
+        var newCharacter = preloadedCharacters.get(params[1]);  // ehhh this breaks if there were two same preloaded character, for now its not an issue though  - Nex
+        if (oldCharacter.curCharacter == newCharacter.curCharacter) return;
 
-        var strumLine = strumLines.members[strumLineIdx];
-        var characterApplying = strumLine.characters[charIndex];
+        insert(members.indexOf(oldCharacter), newCharacter);
+        newCharacter.active = newCharacter.visible = true;
+        remove(oldCharacter);
+
+        if (stage.characterPoses[params[1]] == null) newCharacter.setPosition(oldCharacter.x, oldCharacter.y);
+        if (newCharacter.hasAnim(oldCharacter.getAnimName())) newCharacter.playAnim(oldCharacter.getAnimName(), true, oldCharacter.lastAnimContext, false, oldCharacter.animation?.curAnim?.curFrame);
+        strumLines.members[params[0]].characters[0] = newCharacter;
+
+        if (params[0] != 2) {
+            // Change Icon
+            var oldIcon = oldCharacter.isPlayer ? iconP1 : iconP2;
+            oldIcon.setIcon(newCharacter.getIcon());
+            if (Options.colorHealthBar) {
+                healthBar.createFilledBar(
+                    dad != null && dad.iconColor != null ? dad.iconColor : (PlayState.opponentMode ? 0xFF66FF33 : 0xFFFF0000),
+                    boyfriend != null && boyfriend.iconColor != null ? boyfriend.iconColor : (PlayState.opponentMode ? 0xFFFF0000 : 0xFF66FF33)
+                );
+                healthBar.updateHitbox();
+                healthBar.updateValueFromParent();
+            }
+        }
+
         
-        var newChar = precacheCharacter(characterApplying, newCharName, strumLineIdx, {x: Std.parseFloat(event.params[4]), y: Std.parseFloat(event.params[5])});
-        charactersMap.set(newCharName, newChar);
     }
-}
-
-function onEvent(e) {
-    var event = e.event;
-    if (event.name != "Change Character") return;
-    var strumLineIdx = Std.parseInt(event.params[1]);
-    var charIndex = Std.parseInt(event.params[2]);
-    var newCharName = event.params[3];
-
-    var strumLine = strumLines.members[strumLineIdx];
-    var characterApplying = strumLine.characters[charIndex];
-
-    var characterSetting = precacheCharacter(characterApplying, newCharName, strumLineIdx, {x: Std.parseFloat(event.params[4]), y: Std.parseFloat(event.params[5])});
-
-    if (characterSetting == null || characterApplying == null) return;
-    if (characterApplying.curCharacter == characterSetting.curCharacter) return;
-
-    characterApplying.exists = characterApplying.active = characterApplying.visible = false;
-    characterSetting.exists = characterSetting.active = characterSetting.visible = true;
-    strumLine.characters[Std.parseInt(event.params[3])] = characterSetting;
-
-}
-
-function precacheCharacter(characterToApply:Character, newCharName:String, strumIDX:Int, ?offset) {
-    if (charactersMap.exists(newCharName)) return charactersMap.get(newCharName);
-    offset ??= {x: 0, y: 0};
-    var newChar = new Character(0, 0, newCharName, characterToApply.isPlayer);
-    PlayState.instance.stage.applyCharStuff(newChar, newCharName, strumIDX);
-    newChar.updateHitbox();
-    newChar.exists = newChar.active = newChar.visible = false;
-    insert(members.indexOf(characterToApply), newChar);
-    // cam stage offsets
-    switch (strumIDX) {
-        case 0:
-            newChar.cameraOffset.x += stage?.characterPoses['dad']?.camxoffset;
-            newChar.cameraOffset.y += stage?.characterPoses['dad']?.camyoffset;
-        case 1:
-            newChar.cameraOffset.x += stage?.characterPoses['boyfriend']?.camxoffset;
-            newChar.cameraOffset.y += stage?.characterPoses['boyfriend']?.camyoffset;
-        case 2:
-            newChar.cameraOffset.x += stage?.characterPoses['girlfriend']?.camxoffset;
-            newChar.cameraOffset.y += stage?.characterPoses['girlfriend']?.camyoffset;
-    }
-    
-    // newChar.visible = false;
-    // Rodney i only took this because I wanted to see what this actually did. I still don't know what it does.
-    // try {
-    //     trace("newChar.cameras: " + newChar.cameras);
-    //     for (c in newChar.cameras) {
-    //         newChar.drawComplex(c);
-    //     }
-    // }
-    // catch(e:Dynamic) {
-    //     trace('drawComplex didn\'t work this time for some reason');
-    // }
-    return newChar;
 }
