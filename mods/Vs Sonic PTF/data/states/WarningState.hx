@@ -18,6 +18,7 @@ function create(){
     FlxG.height = 960;
     FlxG.scaleMode.width = 640;
     FlxG.scaleMode.height = 480;
+    
     window.x = 450;
     window.y = 150;
 

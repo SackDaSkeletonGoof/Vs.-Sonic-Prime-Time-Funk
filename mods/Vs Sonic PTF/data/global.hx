@@ -5,12 +5,17 @@ import funkin.backend.utils.NativeAPI;
 import funkin.backend.utils.ShaderResizeFix;
 import funkin.backend.system.Main;
 import openfl.system.Capabilities;
+import lime.app.Application;
 
 function update(elapsed) {
     if (FlxG.keys.justPressed.F6)
         NativeAPI.allocConsole();
     if (FlxG.keys.justPressed.F5)
         FlxG.resetState();
+}
+
+function new(){
+    window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('gameicon/16'))));
 }
 
 static var initialized:Bool = false;

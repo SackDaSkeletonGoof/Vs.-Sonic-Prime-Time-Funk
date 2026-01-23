@@ -1,6 +1,6 @@
 <!DOCTYPE codename-engine-stage>
-<stage folder="empty space/" name="empty space" zoom="0.6">
+<stage folder="empty space/" name="empty space" zoom="1">
 	<girlfriend x="0" scroll="0" spacingx="0" y="0"/>
 	<dad scroll="0"/>
-	<boyfriend x="170" scroll="0" spacingx="0" y="200"/>
+	<boyfriend x="120" scroll="0" spacingx="0" y="120" scale="0.6"/>
 </stage>
