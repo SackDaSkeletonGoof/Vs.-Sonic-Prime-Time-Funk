@@ -15,6 +15,7 @@ function update(elapsed) {
 }
 
 function new(){
+    window.title = "SONIC PC";
     window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('gameicon/16'))));
 }
 
@@ -26,7 +27,6 @@ static var redirectStates:Map<FlxState, String> = [
 ];
 
 function preStateSwitch() {
-    window.title = "SONIC PC";
 
     trace("it be doing something");
     FlxG.camera.bgColor = 0xFF000000;
