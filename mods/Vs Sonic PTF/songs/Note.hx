@@ -1,68 +1,19 @@
-function onNoteCreation(event) {
-	event.cancel();
-	var note = event.note;
-	
-	if (!event.cancel) {
-		switch (event.noteType) {
-			default:
-				note.frames = Paths.getFrames('game/notes/arrows');
-			switch (event.strumID % 4 ) {
-				case 0:
-					note.animation.addByPrefix('scroll', 'purple0');
-					note.animation.addByPrefix('hold', 'purple hold');
-					note.animation.addByPrefix('holdend', 'pruple end hold');
-                    	if (note.animation.exists("holdend") != true) // null or false
-							note.animation.addByPrefix('holdend', 'purple hold end');
-				case 1:
-					note.animation.addByPrefix('scroll', 'blue0');
-					note.animation.addByPrefix('hold', 'blue hold piece');
-					note.animation.addByPrefix('holdend', 'blue hold end');
-				case 2:
-					note.animation.addByPrefix('scroll', 'green0');
-					note.animation.addByPrefix('hold', 'green hold piece');
-					note.animation.addByPrefix('holdend', 'green hold end');
-				case 3:
-					note.animation.addByPrefix('scroll', 'red0');
-					note.animation.addByPrefix('hold', 'red hold piece');
-					note.animation.addByPrefix('holdend', 'red hold end');
-			}
-			note.scale.set(2, 2);
-		}
-	}
+function onNoteCreation(e:NoteCreationEvent) {
+    e.noteSprite = 'game/notes/arrows';
+    e.noteScale = 2;
+	trace("should work");
 }
 
+function onStrumCreation(event:StrumCreationEvent){
+	event.sprite = "game/notes/arrows";
+}
 
-function onStrumCreation(event) {
-	event.cancel();
-	var strum = event.strum;
+function onPostStrumCreation(e:StrumCreationEvent) {
+    e.strum.scale.set(2, 2);
+    e.strum.updateHitbox();
+	e.strum.antialiasing = false;
+}
 
-	if (!event.cancel) {
-		strum.frames = Paths.getFrames('game/notes/arrows');
-		strum.animation.addByPrefix('green', 'arrowUP');
-		strum.animation.addByPrefix('blue', 'arrowDOWN');
-		strum.animation.addByPrefix('purple', 'arrowLEFT');
-		strum.animation.addByPrefix('red', 'arrowRIGHT');
-		strum.antialiasing = false;
-		strum.scale.set(2,2);
-		
-		switch (event.strumID % 4) {
-			case 0:
-				strum.animation.addByPrefix("static", 'arrowLEFT');
-				strum.animation.addByPrefix("pressed", 'left press', 12, false);
-				strum.animation.addByPrefix("confirm", 'left confirm', 24, false);
-			case 1:
-				strum.animation.addByPrefix("static", 'arrowDOWN');
-				strum.animation.addByPrefix("pressed", 'down press', 12, false);
-				strum.animation.addByPrefix("confirm", 'down confirm', 24, false);
-			case 2:
-				strum.animation.addByPrefix("static", 'arrowUP');
-				strum.animation.addByPrefix("pressed", 'up press', 12, false);
-				strum.animation.addByPrefix("confirm", 'up confirm', 24, false);
-			case 3:
-				strum.animation.addByPrefix("static", 'arrowRIGHT');
-				strum.animation.addByPrefix("pressed", 'right press', 12, false);
-				strum.animation.addByPrefix("confirm", 'right confirm', 24, false);
-		}	
-		strum.updateHitbox();
-	}
+function onPostNoteCreation(e) {
+	e.note.antialiasing = false;
 }

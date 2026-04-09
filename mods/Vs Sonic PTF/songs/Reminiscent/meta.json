@@ -1,0 +1,15 @@
+{
+	"customValues": {},
+	"color": "#4456A4",
+	"opponentModeAllowed": true,
+	"icon": "sonic",
+	"difficulties": [
+		"Hard"
+	],
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"displayName": "Reminiscent",
+	"needsVoices": false,
+	"beatsPerMeasure": 4,
+	"bpm": 190
+}
