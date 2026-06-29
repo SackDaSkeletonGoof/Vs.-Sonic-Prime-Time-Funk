@@ -5,12 +5,17 @@ import funkin.menus.credits.CreditsMain;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.display.FlxBackdrop;
 
+
+
 var options:Array<String> = ['STORY MODE', 'FREEPLAY', 'OPTIONS', 'CREDITS'];
 var menuItems:FlxTypedGroup<FunkinText>;
 
 var curSelect:Int = 0;
 
 function create() {
+    importScript("data/scripts/pixel");
+    FlxG.pixelPerfectRender = true;
+    trace("you will die if you dont work");
     add(bg = new FunkinSprite()).makeSolid(1, 1, FlxColor.fromRGB(240, 210, 55));
     bg.setGraphicSize(FlxG.width, FlxG.height);
     bg.screenCenter();
@@ -33,6 +38,7 @@ function create() {
     }
     changeItem(0);
 }
+
 
 function update() {
     if (Options.devMode) {

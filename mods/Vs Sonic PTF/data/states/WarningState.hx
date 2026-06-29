@@ -13,11 +13,11 @@ Framerate.memoryCounter.visible = true;
 Framerate.codenameBuildField.visible = false;
 
 function create(){
-    FlxG.resizeWindow(1024, 768);
-    FlxG.width = 1280;
-    FlxG.height = 960;
-    FlxG.scaleMode.width = 640;
-    FlxG.scaleMode.height = 480;
+    FlxG.resizeWindow(960, 720);
+    FlxG.width = 640;
+    FlxG.height = 480;
+    FlxG.scaleMode.width = 320;
+    FlxG.scaleMode.height = 240;
     
     window.x = 450;
     window.y = 150;
@@ -32,6 +32,8 @@ function create(){
 
     logo = new FlxSprite().loadGraphic(Paths.image('startup/sega'));
     logo.antialiasing = false;
+    logo.scale.x = 0.5;
+    logo.scale.y = 0.5;
     logo.alpha = 1;
     logo.screenCenter(FlxAxes.X);
     logo.screenCenter(FlxAxes.Y);

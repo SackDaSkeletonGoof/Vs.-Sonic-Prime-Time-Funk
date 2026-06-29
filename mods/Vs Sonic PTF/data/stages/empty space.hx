@@ -20,6 +20,17 @@ thats the plan. idk how to actually code it in with out external events.
 reason why i mention this: its the only way to avoid that bug where if you press F5, everything gets fucked.
 */
 
+function postCreate(){
+    FlxG.resizeWindow(1024, 768);
+    FlxG.width = 1280;
+    FlxG.height = 960;
+    FlxG.scaleMode.width = 640;
+    FlxG.scaleMode.height = 480;
+    window.x = 450;
+    window.y = 150;
+    //for (i in [missesTxt, accuracyTxt, scoreTxt, healthBar,healthBarBG, iconP2, iconP1]) i.scale = 0.5;
+}
+
 function create(){
     remove(dad);
     remove(gf);
@@ -69,8 +80,8 @@ function create(){
     //boyPlace(100,10);
 
     //bf.screenCenter();
-    boyfriend.scale.x = 0.6;
-    boyfriend.scale.y = 0.6;
+    boyfriend.scale.x = 1;
+    boyfriend.scale.y = 1;
 
     add(boyfriend);
     add(noise);
@@ -133,6 +144,7 @@ function background(xPos:Float,yPos:Float){
 }
 */
 function postCreate(){
+    //importScript("data/scripts/pixel");
     FlxG.resizeWindow(1024, 768);
     FlxG.width = 1280;
     FlxG.height = 960;
@@ -141,21 +153,12 @@ function postCreate(){
     window.x = 450;
     window.y = 150;
 
-    pixel = new CustomShader("pixel");
-    pixel.blockSize = 1.5;
-    pixel.res = [FlxG.width, FlxG.height];
-    camGame.addShader(pixel);
-    camHUD.addShader(pixel);
+    //pixel = new CustomShader("pixel");
+    //pixel.blockSize = 1.5;
+    //pixel.res = [FlxG.width, FlxG.height];
+
+    //camGame.addShader(pixel);
+    //camHUD.addShader(pixel);
     window.title = "SONIC PC";
     for (i in [missesTxt, accuracyTxt, scoreTxt, healthBar,healthBarBG, iconP2, iconP1]) i.visible = false;
-}
-
-
-function destroy() {
-    window.x -= 160;
-    FlxG.resizeWindow(1280, 720);
-    FlxG.scaleMode.width = 1280;
-    FlxG.scaleMode.height = 720;
-    FlxG.initialWidth = 1280;
-    FlxG.initialHeight = 720;
 }

@@ -7,13 +7,17 @@ import flixel.effects.FlxFlicker;
 import funkin.backend.utils.ShaderResizeFix;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.display.FlxBackdrop;
+import flixel.addons.display.FlxTiledSprite;
 
 import lime.app.Application;
 import lime.graphics.Image;
-import funkin.backend.system.framerate.Framerate;
+
 
 var bingle:FlxSprite;
+var test240:FlxBackdrop = null;
 var sex:FlxSprite;
+
+var pixel:CustomShader;
 /*
 yo, if youre reading this. please help me make this shit look low res. im gonna fucking tweak dawg
 
@@ -21,44 +25,47 @@ please help me if you know how to. istg
 */
 //var hoveringOption:Array<String> = [0,0];
 var menuOptions:FlxTypedGroup<FlxSprite>;
-var optionList:Array<Array> = ["story_mode_text","freeplay_text","options_text","credits_text"];
+var optionList:Array<Array> = ["SM","SQ","options","cred"];
 
 var curSelect:Int = 0;
 
 function create(){
-
-    bingle = new FlxSprite().loadGraphic(Paths.image('startup/sega'));
+    bingle = new FlxSprite().loadGraphic(Paths.image('gameicon/32'));
     bingle.antialiasing = false;
     bingle.alpha = 1;
-    bingle.x = 0;
-    bingle.y = 0;
+    bingle.x = 85;
     bingle.scale.x = 1;
     bingle.scale.y = 1;
-    add(bingle);
 
-    sex = new FlxSprite().loadGraphic(Paths.image('testing/unused files/sex'));
+    test240 = new FlxBackdrop(Paths.image('game/menu/sky'));
+    test240.antialiasing = false;
+    test240.alpha = 1;
+    test240.x = 400;
+    test240.y = 50;
+    test240.velocity.set(-40,-20);
+    test240.scale.x = 1;
+    test240.scale.y = 1;
+    add(test240);
+
+    sex = new FlxSprite().loadGraphic(Paths.image('game/menu/menu'));
     sex.antialiasing = false;
     sex.alpha = 1;
-    sex.x = 300;
-    sex.y = 200;
-    sex.angle = 45;
+    sex.x = 89;
+    sex.y = 16;
     sex.scale.x = 1;
     sex.scale.y = 1;
     add(sex);
 
-    var xPo = -650;
-
-    trace(bingle.x + "this far in x");
-    trace(bingle.y + "this far in y");
+    var xPo = 120;
 
     add(menuOptions = new FlxTypedGroup());
     for (i => optionList in optionList) {
         var menuItem:FlxSprite;
         //menuItem.ID = i;
-        menuOptions.add(menuItem = new FlxSprite(-650,-300).loadGraphic(Paths.image('game/' + optionList)));
-        menuItem.scale.set(0.25,0.25);
+        menuOptions.add(menuItem = new FlxSprite(0 , 0).loadGraphic(Paths.image('game/menu/' + optionList)));
+        menuItem.scale.set(1,1);
         menuItem.x = xPo;
-        menuItem.y = -360 + ((menuItem.ID = i) * 40);
+        menuItem.y = 64 + ((menuItem.ID = i) * 30);
         menuItem.alpha = 1;
         menuItem.antialiasing = false;
 
@@ -72,6 +79,7 @@ function create(){
 //var somethingSelected:Bool = false;
 
 function update(){
+
     //idk what to do here.
     if (Options.devMode) {
         if(controls.SWITCHMOD) {
@@ -95,7 +103,7 @@ function update(){
     }
     if (controls.ACCEPT) {
     CoolUtil.playMenuSFX(1);
-    new FlxTimer().start(0.5, function() selectItem());
+    new FlxTimer().start(1, function() selectItem());
     }
 	#if MOD_SUPPORT
 	if (controls.SWITCHMOD) {
@@ -113,32 +121,42 @@ function changeItem(change:Int = 0) {
     menuOptions.forEach(function(item:FlxSprite) {
         if (item.ID == curSelect) {
             item.color = FlxColor.RED;
-            //item.x = 480;
+            bingle.y = 52 + curSelect * 30;
+            add(bingle);
         } else {
             item.color = FlxColor.WHITE;
-            //item.x = 500;
+            add(bingle);
         }
     });
 }
 
 function selectItem() {
     switch(optionList[curSelect]) {
-        case 'story_mode_text': FlxG.switchState(new StoryMenuState());
-        case 'freeplay_text': FlxG.switchState(new FreeplayState());
-        case 'options_text': FlxG.switchState(new OptionsMenu());
-        case 'credits_text': FlxG.switchState(new CreditsMain());
+        case 'SM': FlxG.switchState(new StoryMenuState()) && curSelect = FlxColor;
+        case 'SQ': FlxG.switchState(new FreeplayState());
+        case 'options': FlxG.switchState(new OptionsMenu());
+        case 'cred': FlxG.switchState(new CreditsMain());
     }
 }
 
 function postCreate(){
-    FlxG.resizeWindow(1024, 768);
-    FlxG.width = 1280;
-    FlxG.height = 960;
-    FlxG.scaleMode.width = 640;
-    FlxG.scaleMode.height = 480;
+    FlxG.camera.pixelPerfectRender = true;
+    FlxG.resizeWindow(960, 720);
+    FlxG.width = 640;
+    FlxG.height = 480;
+    FlxG.scaleMode.width = 320;
+    FlxG.scaleMode.height = 240;
     
     window.x = 450;
     window.y = 150;
+
+    /*
+    *pixel = new CustomShader("pixel");
+    *pixel.blockSize = 1;
+    pixel.res = [FlxG.width, FlxG.height];
+    
+    FlxG.game.addShader(pixel);
+    */
 }
 
 function destroy() {
