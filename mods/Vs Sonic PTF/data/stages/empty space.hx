@@ -57,7 +57,7 @@ function create(){
     exe.antialiasing = false;
     add(exe);
 
-    noise = new FlxSprite(-320,-560);
+    noise = new FlxSprite(0,0);
     noise.frames = Paths.getFrames(path + "stat");
     noise.animation.addByIndices('noise', 'sound', [0,1,2,3,4,5,6,7,8,9,10,12,13], "", 12, true);
     noise.scale.x = 1;
@@ -71,6 +71,8 @@ function create(){
     //bf.screenCenter();
     boyfriend.scale.x = 0.5;
     boyfriend.scale.y = 0.5;
+    boyfriend.x = -100;
+    boyfriend.y = -100;
 
     add(boyfriend);
     add(noise);
