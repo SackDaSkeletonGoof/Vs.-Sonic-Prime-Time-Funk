@@ -132,7 +132,7 @@ function changeItem(change:Int = 0) {
 
 function selectItem() {
     switch(optionList[curSelect]) {
-        case 'SM': FlxG.switchState(new StoryMenuState()) && curSelect = FlxColor;
+        case 'SM': FlxG.switchState(new StoryMenuState());
         case 'SQ': FlxG.switchState(new FreeplayState());
         case 'options': FlxG.switchState(new OptionsMenu());
         case 'cred': FlxG.switchState(new CreditsMain());

@@ -20,17 +20,6 @@ thats the plan. idk how to actually code it in with out external events.
 reason why i mention this: its the only way to avoid that bug where if you press F5, everything gets fucked.
 */
 
-function postCreate(){
-    FlxG.resizeWindow(1024, 768);
-    FlxG.width = 1280;
-    FlxG.height = 960;
-    FlxG.scaleMode.width = 640;
-    FlxG.scaleMode.height = 480;
-    window.x = 450;
-    window.y = 150;
-    //for (i in [missesTxt, accuracyTxt, scoreTxt, healthBar,healthBarBG, iconP2, iconP1]) i.scale = 0.5;
-}
-
 function create(){
     remove(dad);
     remove(gf);
@@ -71,8 +60,8 @@ function create(){
     noise = new FlxSprite(-320,-560);
     noise.frames = Paths.getFrames(path + "stat");
     noise.animation.addByIndices('noise', 'sound', [0,1,2,3,4,5,6,7,8,9,10,12,13], "", 12, true);
-    noise.scale.x = 2;
-    noise.scale.y = 2;
+    noise.scale.x = 1;
+    noise.scale.y = 1;
     noise.cameras = [camHUD];
     noise.scrollFactor.set(0, 0);
     noise.antialiasing = false;
@@ -80,8 +69,8 @@ function create(){
     //boyPlace(100,10);
 
     //bf.screenCenter();
-    boyfriend.scale.x = 1;
-    boyfriend.scale.y = 1;
+    boyfriend.scale.x = 0.5;
+    boyfriend.scale.y = 0.5;
 
     add(boyfriend);
     add(noise);
@@ -145,13 +134,20 @@ function background(xPos:Float,yPos:Float){
 */
 function postCreate(){
     //importScript("data/scripts/pixel");
-    FlxG.resizeWindow(1024, 768);
-    FlxG.width = 1280;
-    FlxG.height = 960;
-    FlxG.scaleMode.width = 640;
-    FlxG.scaleMode.height = 480;
+    camHUD.pixelPerfectRender = true;
+    camGame.pixelPerfectRender = true;
+    FlxG.resizeWindow(960, 720);
+    FlxG.width = 640;
+    FlxG.height = 480;
+    FlxG.scaleMode.width = 320;
+    FlxG.scaleMode.height = 240;
+    
     window.x = 450;
     window.y = 150;
+
+    var nen = 0.5;
+
+
 
     //pixel = new CustomShader("pixel");
     //pixel.blockSize = 1.5;

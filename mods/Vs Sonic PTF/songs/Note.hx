@@ -1,6 +1,6 @@
 function onNoteCreation(e:NoteCreationEvent) {
     e.noteSprite = 'game/notes/arrows';
-    e.noteScale = 2;
+    e.noteScale = 1;
 	trace("should work");
 }
 
@@ -9,7 +9,7 @@ function onStrumCreation(event:StrumCreationEvent){
 }
 
 function onPostStrumCreation(e:StrumCreationEvent) {
-    e.strum.scale.set(2, 2);
+    e.strum.scale.set(1, 1);
     e.strum.updateHitbox();
 	e.strum.antialiasing = false;
 }
