@@ -19,9 +19,7 @@ var sex:FlxSprite;
 
 var pixel:CustomShader;
 /*
-yo, if youre reading this. please help me make this shit look low res. im gonna fucking tweak dawg
-
-please help me if you know how to. istg
+I DID IT. ALL BY MYSELF [kinda] I AM SMART - Sack
 */
 //var hoveringOption:Array<String> = [0,0];
 var menuOptions:FlxTypedGroup<FlxSprite>;

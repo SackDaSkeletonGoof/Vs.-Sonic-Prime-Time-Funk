@@ -15,6 +15,12 @@ var iconArray:Array<HealthIcon> = [];
 
 var songList:FreeplaySonglist;
 
+/*
+yeah so like- this is FUNCTIONAL. but not really like- visually functional iykwim
+there is no visual feedback so if you want to see what is where use F6 to open the console.
+- sack
+
+*/
 //var curSelected:Int = 0;
 var curSelect:Int = 0;
 var canSelect:Bool = true;
