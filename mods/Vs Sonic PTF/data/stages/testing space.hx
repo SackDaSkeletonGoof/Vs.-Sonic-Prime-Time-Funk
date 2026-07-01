@@ -8,7 +8,8 @@ function create(){
 }
 
 function postCreate(){
-    FlxG.camera.pixelPerfectRender = true;
+    camHUD.pixelPerfectRender = true;
+    camGame.pixelPerfectRender = true;
     FlxG.resizeWindow(960, 720);
     FlxG.width = 640;
     FlxG.height = 480;

@@ -23,6 +23,7 @@ static var initialized:Bool = false;
 static var redirectStates:Map<FlxState, String> = [
     MainMenuState => "menus/mainstate",
     FreeplayState => "menus/sidequest",
+    StoryMenuState => "menus/sm",
 ];
 
 function preStateSwitch() {

@@ -81,6 +81,7 @@ function create(){
 		// songText.screenCenter(X);
 	}
 
+    trace(songList.songs[curSelect].name);
 
 	changeItem(0);
 
@@ -100,9 +101,11 @@ function update(){
         FlxG.switchState(new MainMenuState());
     }
 
-	trace(songList.songs[curSelect].name);
+	if (controls.UP_P || controls.DOWN_P) { 
+        changeItem(controls.UP_P ? -1 : 1);
+        trace(songList.songs[curSelect].name);
+    }
 
-	if (controls.UP_P || controls.DOWN_P) changeItem(controls.UP_P ? -1 : 1);
     if (controls.ACCEPT) {
     CoolUtil.playMenuSFX(1);
     new FlxTimer().start(1, FlxG.switchState(new PlayState()));
