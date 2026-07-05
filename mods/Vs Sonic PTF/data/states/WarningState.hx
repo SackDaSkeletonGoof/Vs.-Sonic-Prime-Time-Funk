@@ -2,6 +2,8 @@ import lime.app.Application;
 import lime.graphics.Image;
 import funkin.backend.system.framerate.Framerate;
 
+var disclaimer:FunkinText;
+
 var sega:FlxTimer;
 
 var bleck:FlxSprite;

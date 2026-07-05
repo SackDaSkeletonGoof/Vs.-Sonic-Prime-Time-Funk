@@ -9,6 +9,7 @@ import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.display.FlxBackdrop;
 import flixel.addons.display.FlxTiledSprite;
 
+
 import lime.app.Application;
 import lime.graphics.Image;
 
@@ -28,6 +29,9 @@ var optionList:Array<Array> = ["SM","SQ","options","cred"];
 var curSelect:Int = 0;
 
 function create(){
+
+    CoolUtil.playMenuSong();
+
     bingle = new FlxSprite().loadGraphic(Paths.image('gameicon/32'));
     bingle.antialiasing = false;
     bingle.alpha = 1;

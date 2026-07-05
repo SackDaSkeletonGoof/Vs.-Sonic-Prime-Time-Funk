@@ -5,13 +5,8 @@ import funkin.backend.utils.ShaderResizeFix;
 import funkin.backend.system.Main;
 import openfl.system.Capabilities;
 import lime.app.Application;
-
-function update(elapsed) {
-    if (FlxG.keys.justPressed.F6)
-        NativeAPI.allocConsole();
-    if (FlxG.keys.justPressed.F5)
-        FlxG.resetState();
-}
+import funkin.options.OptionsMenu;
+import funkin.menus.credits.CreditsMain;
 
 function new(){
     window.title = "SONIC PC";  
@@ -24,6 +19,8 @@ static var redirectStates:Map<FlxState, String> = [
     MainMenuState => "menus/mainstate",
     FreeplayState => "menus/sidequest",
     StoryMenuState => "menus/sm",
+    CreditsMain => "menus/credits",
+    OptionsMenu => "menus/options",
 ];
 
 function preStateSwitch() {
